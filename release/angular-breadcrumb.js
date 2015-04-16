@@ -32,7 +32,7 @@ function $Breadcrumb() {
         angular.extend($$options, options);
     };
 
-    this.$get = ['$state', '$stateParams', '$rootScope', function($state, $stateParams, $rootScope) {
+    this.$get = ['$state', '$rootScope', function($state, $rootScope) {
 
         var $lastViewScope = $rootScope;
 
@@ -70,7 +70,7 @@ function $Breadcrumb() {
                     parentParams = $lastViewScope.$eval(ref.paramExpr);
                 }
 
-                conf.ncyBreadcrumbLink = $state.href(ref.state, parentParams || $stateParams || {});
+                conf.ncyBreadcrumbLink = $state.href(ref.state, parentParams || {});
                 chain.unshift(conf);
             }
         };
