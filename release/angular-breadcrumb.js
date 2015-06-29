@@ -70,7 +70,7 @@ function $Breadcrumb() {
                     parentParams = $lastViewScope.$eval(ref.paramExpr);
                 }
 
-                conf.ncyBreadcrumbLink = $state.href(ref.state, parentParams || {});
+                conf.ncyBreadcrumbLink = $state.href(ref.state, parentParams || {}, {inherit: false});
                 chain.unshift(conf);
             }
         };
